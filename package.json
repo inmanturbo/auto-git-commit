@@ -45,6 +45,16 @@
           "type": "string",
           "default": "vscode autocommit",
           "description": "Default commit message"
+        },
+          "autoGitCommit.separateBranch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Write auto commits and session tags to a separate branch via commit-tree"
+        },
+        "autoGitCommit.branchName": {
+          "type": "string",
+          "default": "autogit/diary",
+          "description": "Branch to store auto commits and session tags"
         }
       }
     }
