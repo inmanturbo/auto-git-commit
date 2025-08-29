@@ -1,0 +1,70 @@
+{
+  "name": "auto-git-commit",
+  "displayName": "Auto Git Commit",
+  "description": "Automatically creates tags and commits changes every 2 minutes",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "autoGitCommit.start",
+        "title": "Start Auto Git Commit"
+      },
+      {
+        "command": "autoGitCommit.stop",
+        "title": "Stop Auto Git Commit"
+      },
+      {
+        "command": "autoGitCommit.status",
+        "title": "Auto Git Commit Status"
+      }
+    ],
+    "configuration": {
+      "title": "Auto Git Commit",
+      "properties": {
+        "autoGitCommit.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable automatic git commits"
+        },
+        "autoGitCommit.interval": {
+          "type": "number",
+          "default": 120000,
+          "description": "Commit interval in milliseconds (default: 2 minutes)"
+        },
+        "autoGitCommit.commitMessage": {
+          "type": "string",
+          "default": "vscode autocommit",
+          "description": "Default commit message"
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inmanturbo/auto-git-commit"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "automation",
+    "tags",
+    "vscode"
+  ],
+  "author": {
+    "name": "Inmanturbo"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
